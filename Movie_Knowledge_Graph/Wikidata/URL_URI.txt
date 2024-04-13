@@ -1,0 +1,7 @@
+Wikidata
+URL: https://www.wikidata.org/w/api.php # for request
+URI: https://query.wikidata.org/sparql # for SPARQL
+
+DBpedia
+URL:
+URI: http://dbpedia.org/sparql
