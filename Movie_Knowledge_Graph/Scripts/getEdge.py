@@ -2,25 +2,27 @@ import getVertexEdge_func as gvef
 import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
-#filePath_merged = '../../Datasets/random/10k_3+.csv'
-#filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_random_10k_3+.csv'
+
 
 multi_attr = ['genres', 'director', 'stars', 'countries']
 # исходные данные
-AMOUNT_MOVIES = 56892    # самый полный датасет по кол-ву фильмов
+AMOUNT_MOVIES = 10000    # самый полный датасет по кол-ву фильмов
+#AMOUNT_MOVIES = 56892    # самый полный датасет по кол-ву фильмов
 filePath_multiAttr = '../../Datasets/merged/multi_attr_' + str(AMOUNT_MOVIES)
 
 # сохранение
-filePath_edge = '../../Datasets/visualization_vertex_edge/edge_' + str(AMOUNT_MOVIES) + '.csv'
-
+# filePath_edge = '../../Datasets/visualization_vertex_edge/edge_' + str(AMOUNT_MOVIES) + '.csv'
+filePath_edge = '../../Datasets/visualization_vertex_edge/edge_10000_3+.csv'
 
 data = {}
 data['Source'] = []
 data['Target'] = []
 edge_df = pd.DataFrame(data)
 
-input_df = pd.read_csv('../../Datasets/merged/dataset_' + str(AMOUNT_MOVIES) + '.csv')
-vertex_df = pd.read_csv('../../Datasets/visualization_vertex_edge/vertex_' + str(AMOUNT_MOVIES) + '.csv')
+# input_df = pd.read_csv('../../Datasets/merged/dataset_' + str(AMOUNT_MOVIES) + '.csv')
+input_df = pd.read_csv('../../Datasets/random/10000_3+.csv')
+vertex_df = pd.read_csv('../../Datasets/visualization_vertex_edge/vertex_10000_3+.csv')
+# vertex_df = pd.read_csv('../../Datasets/visualization_vertex_edge/vertex_' + str(AMOUNT_MOVIES) + '.csv')
 
 dict_ma_df = {ma: pd.read_csv(filePath_multiAttr + '/' + ma + '.csv') for ma in multi_attr}
 
