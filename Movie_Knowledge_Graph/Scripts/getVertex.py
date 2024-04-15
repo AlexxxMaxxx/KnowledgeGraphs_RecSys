@@ -5,14 +5,13 @@ warnings.filterwarnings('ignore')
 
 multi_attr = ['genres', 'director', 'stars', 'countries']
 # исходные данные
-#AMOUNT_MOVIES = 10000    # самый полный датасет по кол-ву фильмов
-AMOUNT_MOVIES = 56892    # самый полный датасет по кол-ву фильмов
-#filePath_merged = '../../Datasets/random/10000_3+.csv'
+
+AMOUNT_MOVIES = 10694    # самый полный датасет по кол-ву фильмов
+
 filePath_merged = '../../Datasets/merged/dataset_' + str(AMOUNT_MOVIES) + '.csv'
 filePath_multiAttr = '../../Datasets/merged/multi_attr_' + str(AMOUNT_MOVIES)
 
 # сохранение
-#filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_10000_3+.csv'
 filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_' + str(AMOUNT_MOVIES) + '.csv'
 
 input_df = pd.read_csv(filePath_merged)

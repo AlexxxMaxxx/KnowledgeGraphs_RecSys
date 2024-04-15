@@ -39,19 +39,18 @@ walk_length = [40, 80, 120]
 num_walks = [25, 50, 75]
 window = [5, 10, 15]
 
-fileName_merged_dataset = '../../Datasets/random/10000_3+.csv'
-#fileName_merged_dataset = '../../Datasets/random/10000_3.csv'
+fileName_merged_dataset = '../../Datasets/merged/dataset_10694.csv'
 # ------------------------------
 merged_df = pd.read_csv(fileName_merged_dataset)
 SIZE_DF = len(merged_df)
 
-filePath_edge = '../../Datasets/visualization_vertex_edge/edge_10000_3+.csv'
-#filePath_edge = './Datasets/visualization_vertex_edge/edge_' + str(SIZE_DF) + '.csv'
+filePath_edge = '../../Datasets/visualization_vertex_edge/edge_' + str(SIZE_DF) + '.csv'
 
-folder_emb = '../../Datasets/emb_data/10000_3+/'
-# folder_emb = 'Node2Vec/emb_data/' + str(SIZE_DF) + '/'
+
+folder_emb = '../../Datasets/emb_data/' + str(SIZE_DF) + '/'
 folder_emb_emb = folder_emb + 'emb'
 folder_model = folder_emb + 'model'
+print(folder_model)
 
 filePath_times = folder_emb + 'execution_time.txt'
 filePath_memory = folder_emb + 'mem_usage.txt'
@@ -76,7 +75,8 @@ af.folderExists(folder_emb_emb)
 
 # Получаем все комбинации параметров
 #all_combinations = list(product(dimensions, walk_length, num_walks, window))
-all_combinations = [[8, 55, 35, 8], [16, 55, 35, 8], [32, 55, 35, 8], [64, 55, 35, 8], [128, 55, 35, 8]]
+#all_combinations = [[8, 55, 35, 8], [16, 55, 35, 8], [32, 55, 35, 8], [64, 55, 35, 8], [128, 55, 35, 8]]
+all_combinations = [[8, 55, 35, 8], [16, 55, 35, 8]]
 
 for combination in all_combinations:
     strCombination = '_'.join([str(x) for x in combination])

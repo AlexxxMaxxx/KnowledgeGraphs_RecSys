@@ -13,9 +13,9 @@ def getListMoviesId(filePath_vertex):
 
 # тут меняем-.-.-.-.-.-.-.-.-.-
 ratings_path = '../../Datasets/ratings.csv'
-filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_10000_4.csv'
-save_path = '../../Datasets/cutRatings/ratings_10000_4.csv'
-lastMovieId = 10000
+filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_10694.csv'
+save_path = '../../Datasets/cutRatings/ratings_10694.csv'
+lastMovieId = 10694
 # -.-.-.-.-.-.-.-.-.-.-.-.-.-.-
 
 moviesId = getListMoviesId(filePath_vertex)

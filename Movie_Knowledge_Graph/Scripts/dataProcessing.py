@@ -24,6 +24,10 @@ filePath_multiAttr = '../../Datasets/merged/multi_attr_'
 # Объединение датасетов в 1
 input_df = pd.DataFrame(pd.read_csv(filePath_source))
 input_df = input_df[target_columns]
+# temp
+input_df = input_df[:11000]
+
+
 print(f'Исходный набор данных с выбранными колонками:\n {input_df.head(10)}')
 
 # замена 'IMDb_Id' --> 'movieId'

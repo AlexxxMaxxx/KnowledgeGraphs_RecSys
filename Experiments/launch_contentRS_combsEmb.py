@@ -9,8 +9,8 @@ import pandas as pd
 import numpy as np
 
 # тут менять -.-.-.-.-.-.-.
-dataset_name = '10000_3+'
-lastMovieVertexId = 10000
+dataset_name = '10694'
+lastMovieVertexId = 10694 #?
 topN = 10
 fraction_test = 0.05
 # -.-.-.-.-.-.-.-.-.-.-.-.-.
@@ -27,14 +27,15 @@ else:
 
 
 filePath_vertex = '../Datasets/visualization_vertex_edge/vertex_' + dataset_name + '.csv'
-train_data_path = '../Datasets/exp1/content_rs/combsEmb/train_data_' + dataset_name + '.pkl'
-test_data_path = '../Datasets/exp1/content_rs/combsEmb/test_data_' + dataset_name + '.pkl'
+train_data_path = '../Datasets/experiments/collaborative_rs/KNNBasic_User/' + dataset_name + '/train_data_' + dataset_name + '.pkl'
+test_data_path = '../Datasets/experiments/collaborative_rs/KNNBasic_User/' + dataset_name + '/test_data_' + dataset_name + '.pkl'
 
 vertex_df = pd.read_csv(filePath_vertex)
 test_data = af.pikcle_load(test_data_path)
+print(test_data)
 train_data = af.pikcle_load(train_data_path)
 
-folder_emb = '../../Datasets/emb_data/' + dataset_name + '/'
+folder_emb = '../Datasets/emb_data/' + dataset_name + '/'
 folder_emb_emb = folder_emb + 'emb'
 folder_model = folder_emb + 'model'
 
