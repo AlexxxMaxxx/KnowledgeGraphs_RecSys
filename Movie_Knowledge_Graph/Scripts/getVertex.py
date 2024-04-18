@@ -3,16 +3,21 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
-multi_attr = ['genres', 'director', 'stars', 'countries']
+#multi_attr = ['genres', 'cast', 'director', 'producer', 'writer', 'stars', 'countries']
+# comb3: comb2 + director, producer
 # исходные данные
 
-AMOUNT_MOVIES = 10694    # самый полный датасет по кол-ву фильмов
+df = 'df4'
+comb = 'comb4'
+multi_attr = ['genres', 'writer', 'director', 'producer', 'stars', 'countries']
+# посчитать для оставшихся комбинаций
 
-filePath_merged = '../../Datasets/merged/dataset_' + str(AMOUNT_MOVIES) + '.csv'
-filePath_multiAttr = '../../Datasets/merged/multi_attr_' + str(AMOUNT_MOVIES)
+
+filePath_merged = '../../Datasets/merged/' + comb + '/' + df + '_dataset.csv'
+filePath_multiAttr = '../../Datasets/merged/' + comb + '/' + df + '_multi_attr'
 
 # сохранение
-filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_' + str(AMOUNT_MOVIES) + '.csv'
+filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex/vertex_' + df + '_' + comb + '.csv'
 
 input_df = pd.read_csv(filePath_merged)
 print(input_df.head(10))
@@ -27,7 +32,7 @@ for col_name in columns_names[1:]:
         vertex_df, next_id = gvef.getNewVertex(input_df, col_name, vertex_df, len(vertex_df) + 1)
 
 for ma in multi_attr:
-    ma_path = filePath_multiAttr + '/' + ma + '.csv'
+    ma_path = filePath_multiAttr + '/' + df + '_' + ma + '.csv'
     ma_df = pd.read_csv(ma_path)
     vertex_df, next_id = gvef.getNewVertex(ma_df, ma, vertex_df, len(vertex_df) + 1)
     print(vertex_df.tail(10))

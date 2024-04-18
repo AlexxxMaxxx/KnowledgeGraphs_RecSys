@@ -24,30 +24,24 @@ def saveAll(model, modelPath, embPath):
 
 # Тут вносим изменения ---------
 # по рекомендациям
-'''dimensions = [64, 128, 256, 512]
-walk_length = [40, 80, 120, 160]
-num_walks = [25, 50, 75, 100]
-window = [5, 10, 15, 30]'''
-
-'''dimensions = [8, 16, 32]
-walk_length = [10, 20, 40]
-num_walks = [10, 20, 40]
-window = [2, 5, 10]'''
 
 dimensions = [64, 128]
 walk_length = [40, 80, 120]
 num_walks = [25, 50, 75]
 window = [5, 10, 15]
 
-fileName_merged_dataset = '../../Datasets/merged/dataset_10694.csv'
+comb = 'comb1'
+df = 'df1'
+
+fileName_merged_dataset = '../../Datasets/merged/' + comb + '/' + df + '_dataset.csv'    # 1
 # ------------------------------
 merged_df = pd.read_csv(fileName_merged_dataset)
 SIZE_DF = len(merged_df)
 
-filePath_edge = '../../Datasets/visualization_vertex_edge/edge_' + str(SIZE_DF) + '.csv'
+filePath_edge = '../../Datasets/visualization_vertex_edge/edge/edge_' + df + '_' + comb + '.csv'
 
 
-folder_emb = '../../Datasets/emb_data/' + str(SIZE_DF) + '/'
+folder_emb = '../../Datasets/emb_data/' + comb + '_' + df + '/'
 folder_emb_emb = folder_emb + 'emb'
 folder_model = folder_emb + 'model'
 print(folder_model)
@@ -75,8 +69,7 @@ af.folderExists(folder_emb_emb)
 
 # Получаем все комбинации параметров
 #all_combinations = list(product(dimensions, walk_length, num_walks, window))
-#all_combinations = [[8, 55, 35, 8], [16, 55, 35, 8], [32, 55, 35, 8], [64, 55, 35, 8], [128, 55, 35, 8]]
-all_combinations = [[8, 55, 35, 8], [16, 55, 35, 8]]
+all_combinations = [[32, 20, 10, 2], [64, 40, 20, 5], [128, 80, 40, 10]]
 
 for combination in all_combinations:
     strCombination = '_'.join([str(x) for x in combination])

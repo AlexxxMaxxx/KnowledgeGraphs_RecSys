@@ -26,10 +26,10 @@ RS_model_filePath = folderName + '/models/' + RS_type + '.pkl'
 
 if af.fileExists(filePath_results):
     info_df = pd.read_csv(filePath_results)
-    print('df exist')
+    print('movies exist')
 else:
     info_df = createInfoDF()
-    print('df create')
+    print('movies create')
 
 ratings_df, initLen_Ratings, amount_users, amount_movies = startRatings(pd.read_csv(ratings_path), max_size)
 ratings_data, train_data, test_data = startSurprise(ratings_df, test_size, train_file, test_file)

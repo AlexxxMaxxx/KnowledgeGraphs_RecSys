@@ -16,7 +16,7 @@ def getExecutionTime(start_time, end_time):
     return end_time - start_time
 
 def writeExecutionTime(filePath, executionTime, params):
-    with open(filePath, 'w') as file:
+    with open(filePath, 'a') as file:
         str = f"Время выполнения кода: {executionTime} секунд c параметрами {params}"
         file.write(str)
     print(str)
@@ -32,9 +32,8 @@ def getMemUsage(mem_before, mem_after):
         return str(mem/1024) + ' Мб'
 
 def writeMemUsage(filePath, mem_usage, params):
-    with open(filePath, 'w') as file:
-      file.write(f"Время выполнения кода: {mem_usage} секунд c параметрами {params}")
-    print(f"Потребление памяти: {mem_usage}")
+    with open(filePath, 'a') as file:
+      file.write(f"Потребление памяти: {mem_usage}")
 
 def pickle_dump(filePath, data):
     with open(filePath, 'wb') as f:

@@ -3,44 +3,59 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
+def start(df, comb, multi_attr):
+    # comb1 - для начала
+    filePath_multiAttr = '../../Datasets/merged/' + comb + '/' + df + '_multi_attr'
 
-multi_attr = ['genres', 'director', 'stars', 'countries']
-# исходные данные
-AMOUNT_MOVIES = 10694    # самый полный датасет по кол-ву фильмов
+    # сохранение
+    filePath_edge = '../../Datasets/visualization_vertex_edge/edge/edge_' + df + '_' + comb + '.csv'
 
-#AMOUNT_MOVIES = 56892    # самый полный датасет по кол-ву фильмов
-filePath_multiAttr = '../../Datasets/merged/multi_attr_' + str(AMOUNT_MOVIES)
+    data = {}
+    data['Source'] = []
+    data['Target'] = []
+    edge_df = pd.DataFrame(data)
 
-# сохранение
-filePath_edge = '../../Datasets/visualization_vertex_edge/edge_' + str(AMOUNT_MOVIES) + '.csv'
+    input_df = pd.read_csv('../../Datasets/merged/' + comb + '/' + df + '_dataset.csv')
+    vertex_df = pd.read_csv('../../Datasets/visualization_vertex_edge/vertex/vertex_' + df + '_' + comb + '.csv')
 
+    dict_ma_df = {ma: pd.read_csv(filePath_multiAttr + '/' + df + '_' + ma + '.csv') for ma in multi_attr}
 
-data = {}
-data['Source'] = []
-data['Target'] = []
-edge_df = pd.DataFrame(data)
+    columns_names = input_df.columns
+    for i, row in input_df.iterrows():
+        source = gvef.getVertexId(vertex_df, str(row['title']) + '_' + str(row['movieId']))
+        targets = []
+        targets.extend(
+            [gvef.getVertexId(vertex_df, col_name + '_' + str(row[col_name])) for col_name in columns_names[1:] if
+             col_name != 'title'])
 
-input_df = pd.read_csv('../../Datasets/merged/dataset_' + str(AMOUNT_MOVIES) + '.csv')
-vertex_df = pd.read_csv('../../Datasets/visualization_vertex_edge/vertex_' + str(AMOUNT_MOVIES) + '.csv')
+        for name_attr, df in dict_ma_df.items():
+            foundValue = df.loc[df['movieId'] == row['movieId'], name_attr].tolist()
+            targets.extend([gvef.getVertexId(vertex_df, name_attr + '_' + str(fv)) for fv in foundValue])
+        for j in range(0, len(targets)):
+            edge_df.loc[len(edge_df)] = pd.Series({'Source': source, 'Target': targets[j]})
 
-dict_ma_df = {ma: pd.read_csv(filePath_multiAttr + '/' + ma + '.csv') for ma in multi_attr}
-
-columns_names = input_df.columns
-for i, row in input_df.iterrows():
-    source = gvef.getVertexId(vertex_df, str(row['title']) + '_' + str(row['movieId']))
-    targets = []
-    targets.extend(
-        [gvef.getVertexId(vertex_df, col_name + '_' + str(row[col_name])) for col_name in columns_names[1:] if
-         col_name != 'title'])
-
-    for name_attr, df in dict_ma_df.items():
-        foundValue = df.loc[df['movieId'] == row['movieId'], name_attr].tolist()
-        targets.extend([gvef.getVertexId(vertex_df, name_attr + '_' + str(fv)) for fv in foundValue])
-    for j in range(0, len(targets)):
-        edge_df.loc[len(edge_df)] = pd.Series({'Source': source, 'Target': targets[j]})
+    edge_df.to_csv(filePath_edge, index=False)
 
 
-edge_df.to_csv(filePath_edge, index=False)
+dfs = ['df1', 'df2', 'df3', 'df4']
+combs = ['comb1', 'comb2', 'comb3', 'comb4']
+
+for comb in combs:
+    if comb == 'comb1':
+        multi_attr = ['genres']
+    elif comb == 'comb2':
+        multi_attr = ['genres', 'writer']
+    elif comb == 'comb3':
+        multi_attr = ['genres', 'writer', 'director', 'producer']
+    else:
+        multi_attr = ['genres', 'writer', 'director', 'producer', 'stars', 'countries']
+    print(f'comb = {comb}')
+    print(f'multi_attr = {multi_attr}')
+    for df in dfs:
+        print(f'df = {df}')
+        start(df, comb, multi_attr)
+
+
 
 
 
