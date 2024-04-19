@@ -38,7 +38,8 @@ def start(df, comb, multi_attr):
 
 
 dfs = ['df1', 'df2', 'df3', 'df4']
-combs = ['comb1', 'comb2', 'comb3', 'comb4']
+#combs = ['comb1', 'comb2', 'comb3', 'comb4', 'comb5', 'comb6']
+combs = ['comb5', 'comb6']
 
 for comb in combs:
     if comb == 'comb1':
@@ -47,8 +48,12 @@ for comb in combs:
         multi_attr = ['genres', 'writer']
     elif comb == 'comb3':
         multi_attr = ['genres', 'writer', 'director', 'producer']
-    else:
+    elif comb == 'comb4':
         multi_attr = ['genres', 'writer', 'director', 'producer', 'stars', 'countries']
+    elif comb == 'comb5':
+        multi_attr = ['genres', 'writer', 'director', 'producer', 'stars', 'countries', 'likes']
+    else:
+        multi_attr = ['genres', 'likes']
     print(f'comb = {comb}')
     print(f'multi_attr = {multi_attr}')
     for df in dfs:

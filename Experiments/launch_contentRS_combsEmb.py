@@ -4,7 +4,7 @@ import additionalFunctions as af
 from itertools import product
 import sys
 sys.path.append('../Recommender_Systems/')
-from content_rs import *
+import content_rs as crs
 import pandas as pd
 import numpy as np
 
@@ -23,7 +23,7 @@ info_df_filePath = folderName + '/info.csv'
 if af.fileExists(info_df_filePath):
     info_df = pd.read_csv(info_df_filePath)
 else:
-    info_df = createInfoDF()
+    info_df = crs.createInfoDF()
 
 
 filePath_vertex = '../Datasets/visualization_vertex_edge/vertex_' + dataset_name + '.csv'
@@ -61,18 +61,18 @@ for combination in all_combinations:
         start_time = af.timer()
         mem_before = af.mem()
 
-        predictions, real_ratings, fraction_zero, mean_t_iter = getAllEmbPredictions(model, embeddings, test_data,
+        predictions, real_ratings, fraction_zero, mean_t_iter = crs.getAllEmbPredictions(model, embeddings, test_data,
                                                                                          train_data, vertex_df, topN,
                                                                                          lastMovieVertexId)
 
         predict_filePath = folderName + '/predictions/predict_' + strCombination + '.csv'
-        savePredictions(predictions, predict_filePath)
+        crs.savePredictions(predictions, predict_filePath)
 
         real_ratings = np.array(real_ratings)
         predictions = np.array(predictions)
 
-        rmse = rmse_content(predictions, np.array(real_ratings))
-        mae = mae_content(predictions, real_ratings)
+        rmse = crs.rmse_content(predictions, np.array(real_ratings))
+        mae = crs.mae_content(predictions, real_ratings)
 
         info_df.loc[len(info_df)] = [dataset_name, lastMovieVertexId, strCombination, fraction_test, topN,
                                      round(fraction_zero, 4), str(mae), round(rmse, 4), str(mean_t_iter),

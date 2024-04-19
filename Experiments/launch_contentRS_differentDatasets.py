@@ -3,8 +3,8 @@ from gensim.models import Word2Vec
 import additionalFunctions as af
 import sys
 sys.path.append('../Recommender_Systems/')
-from content_rs import *
-from collaborative_rs import *
+import content_rs as crs
+import collaborative_rs as clbr_rs
 from itertools import product
 import pandas as pd
 import numpy as np
@@ -24,7 +24,7 @@ if af.fileExists(info_df_filePath):
     info_df = pd.read_csv(info_df_filePath)
     print('df exist')
 else:
-    info_df = createInfoDF()
+    info_df = crs.createInfoDF()
     print('df create')
 
 for dataset_name in dataset_names:
@@ -34,8 +34,8 @@ for dataset_name in dataset_names:
     train_file = folderName + '/data/train_data_' + dataset_name + '.pkl'
     test_file = folderName + '/data/test_data_' + dataset_name + '.pkl'
 
-    ratings_df, initLen_Ratings, amount_users, amount_movies = startRatings(pd.read_csv(ratings_path), max_size)
-    ratings_data, _, __ = startSurprise(ratings_df, fraction_test, train_file, test_file)
+    ratings_df, initLen_Ratings, amount_users, amount_movies = clbr_rs.startRatings(pd.read_csv(ratings_path), max_size)
+    ratings_data, _, __ = clbr_rs.startSurprise(ratings_df, fraction_test, train_file, test_file)
 
     vertex_df = pd.read_csv(filePath_vertex)
     test_data = af.pikcle_load(test_file)
@@ -53,7 +53,7 @@ for dataset_name in dataset_names:
         modelPath = folder_model + '/model_' + strCombination
         embPath = folder_emb_emb + '/emb_' + strCombination
 
-        if checkCombination(modelPath, embPath):
+        if crs.checkCombination(modelPath, embPath):
             print('if')
             model = Word2Vec.load(modelPath)
             embeddings = KeyedVectors.load_word2vec_format(embPath)
@@ -61,7 +61,7 @@ for dataset_name in dataset_names:
             start_time = af.timer()
             mem_before = af.mem()
 
-            predictions, real_ratings, fraction_zero, mean_t_iter = getAllEmbPredictions(model, embeddings,
+            predictions, real_ratings, fraction_zero, mean_t_iter = crs.getAllEmbPredictions(model, embeddings,
                                                                                              test_data,
                                                                                              train_data, vertex_df,
                                                                                              topN,
@@ -70,13 +70,13 @@ for dataset_name in dataset_names:
 
             af.folderExists(folderName + '/predictions')
             predict_filePath = folderName + '/predictions' + '/predict_' + strCombination + '.csv'
-            savePredictions(predictions, predict_filePath)
+            crs.savePredictions(predictions, predict_filePath)
 
             real_ratings = np.array(real_ratings)
             predictions = np.array(predictions)
 
-            rmse = rmse_content(predictions, np.array(real_ratings))
-            mae = mae_content(predictions, real_ratings)
+            rmse = crs.rmse_content(predictions, np.array(real_ratings))
+            mae = crs.mae_content(predictions, real_ratings)
 
             info_df.loc[len(info_df)] = [dataset_name, lastMovieVertexId, strCombination, fraction_test, topN,
                                          round(fraction_zero, 4), str(mae), round(rmse, 4), str(mean_t_iter),

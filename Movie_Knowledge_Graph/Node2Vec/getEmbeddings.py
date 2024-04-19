@@ -69,7 +69,7 @@ af.folderExists(folder_emb_emb)
 
 # Получаем все комбинации параметров
 #all_combinations = list(product(dimensions, walk_length, num_walks, window))
-all_combinations = [[32, 20, 10, 2], [64, 40, 20, 5], [128, 80, 40, 10]]
+all_combinations = [[8, 50, 30, 8], [16, 50, 30, 8], [32, 50, 30, 8], [64, 50, 30, 8]]
 
 for combination in all_combinations:
     strCombination = '_'.join([str(x) for x in combination])

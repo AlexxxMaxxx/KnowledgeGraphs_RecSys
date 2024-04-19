@@ -9,7 +9,8 @@ def getVertexMovies(input_df):
 
 def getNewVertex(input_df, col_name, vertex_df, next_id):
     unique_values = input_df[col_name].unique()
-
+    print(f'unique_values {unique_values}')
+    print(f'col_name {col_name}')
     for i in range(0, len(unique_values)):
         vertex_df.loc[len(vertex_df)] = pd.Series({'id': next_id, 'label': col_name + '_' + str(unique_values[i])})
         next_id += 1

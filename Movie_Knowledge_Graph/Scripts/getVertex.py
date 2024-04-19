@@ -8,8 +8,8 @@ warnings.filterwarnings('ignore')
 # исходные данные
 
 df = 'df4'
-comb = 'comb4'
-multi_attr = ['genres', 'writer', 'director', 'producer', 'stars', 'countries']
+comb = 'comb6'
+multi_attr = ['genres', 'likes']
 # посчитать для оставшихся комбинаций
 
 
@@ -33,7 +33,9 @@ for col_name in columns_names[1:]:
 
 for ma in multi_attr:
     ma_path = filePath_multiAttr + '/' + df + '_' + ma + '.csv'
+    print(f'ma_path {ma_path}')
     ma_df = pd.read_csv(ma_path)
+    print(f'ma_df {ma_df.head(10)}')
     vertex_df, next_id = gvef.getNewVertex(ma_df, ma, vertex_df, len(vertex_df) + 1)
     print(vertex_df.tail(10))
 
