@@ -5,15 +5,18 @@ import collaborative_rs as clbr_rs
 import pandas as pd
 
 # Тут меняем-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-max_size = 100000  # временно
+max_size = 100000
 test_size = 0.05
-dataset_name = '10694'
-
-ratings_path = '../Datasets/cutRatings/ratings_' + dataset_name + '.csv'
+dataset_name = 'df3'
+comb = 'comb1'
 RS_type = 'KNNBasic_User'    # KNNBasic_Item
-# -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+repeat = True
 
-folderName = '../Datasets/experiments/collaborative_rs/' + RS_type + '/' + dataset_name
+ratings_path = '../Datasets/merged/' + comb + '/' + 'ratings_' + dataset_name + '.csv'
+# -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
+folderName = '../Datasets/experiments/collaborative_rs/' + RS_type
+af.folderExists(folderName)
+folderName += '/' + dataset_name + '_' + comb
 af.folderExists(folderName)
 
 filePath_results = folderName + '/info_df.csv'
@@ -34,7 +37,7 @@ else:
 ratings_df, initLen_Ratings, amount_users, amount_movies = clbr_rs.startRatings(pd.read_csv(ratings_path), max_size)
 ratings_data, train_data, test_data = clbr_rs.startSurprise(ratings_df, test_size, train_file, test_file)
 
-if af.fileExists(RS_model_filePath):
+if af.fileExists(RS_model_filePath) and not repeat:
     loaded_model = af.pikcle_load(RS_model_filePath)
     predictions = loaded_model.test(test_data)
 
@@ -44,7 +47,10 @@ if af.fileExists(RS_model_filePath):
     # что с ней делать дальше?
 else:
     start_time = af.timer()
-    best_k, best_sim_options = clbr_rs.gridSearch_KNNBasic(True, ratings_data)    # KNNBasic userBased
+    flag = False
+    if RS_type == 'KNNBasic_User':
+        flag = True
+    best_k, best_sim_options = clbr_rs.gridSearch_KNNBasic(flag, ratings_data)
 
     model, fit_time, predictions, predict_time = clbr_rs.fit_test_KNNBasic(best_k, best_sim_options, train_data, test_data)
     af.pickle_dump(RS_model_filePath, model)    # сохранение модели

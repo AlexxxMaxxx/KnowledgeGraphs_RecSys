@@ -30,67 +30,63 @@ walk_length = [40, 80, 120]
 num_walks = [25, 50, 75]
 window = [5, 10, 15]
 
-comb = 'comb1'
-df = 'df1'
+combs = ['comb2', 'comb3', 'comb4']
+for comb in combs:
+    df = 'df1'
 
-fileName_merged_dataset = '../../Datasets/merged/' + comb + '/' + df + '_dataset.csv'    # 1
-# ------------------------------
-merged_df = pd.read_csv(fileName_merged_dataset)
-SIZE_DF = len(merged_df)
+    fileName_merged_dataset = '../../Datasets/merged/' + comb + '/' + df + '_dataset.csv'    # 1
 
-filePath_edge = '../../Datasets/visualization_vertex_edge/edge/edge_' + df + '_' + comb + '.csv'
+    merged_df = pd.read_csv(fileName_merged_dataset)
+    SIZE_DF = len(merged_df)
 
+    filePath_edge = '../../Datasets/visualization_vertex_edge/edge/edge_' + df + '_' + comb + '.csv'
 
-folder_emb = '../../Datasets/emb_data/' + comb + '_' + df + '/'
-folder_emb_emb = folder_emb + 'emb'
-folder_model = folder_emb + 'model'
-print(folder_model)
+    folder_emb = '../../Datasets/emb_data/' + comb + '_' + df + '/'
+    folder_emb_emb = folder_emb + 'emb'
+    folder_model = folder_emb + 'model'
+    print(folder_model)
 
-filePath_times = folder_emb + 'execution_time.txt'
-filePath_memory = folder_emb + 'mem_usage.txt'
-filePath_graph = folder_emb + 'graph.graphml'
-temp_folder = folder_emb + 'temp_folder'
+    filePath_times = folder_emb + 'execution_time.txt'
+    filePath_memory = folder_emb + 'mem_usage.txt'
+    filePath_graph = folder_emb + 'graph.graphml'
+    temp_folder = folder_emb + 'temp_folder'
 
-print(f'SIZE_DF = {SIZE_DF}\n')      # remove
-print(f'DF {fileName_merged_dataset}\n')      # remove
-print(merged_df.head(5))     # remove
+    af.folderExists(folder_emb)
 
-af.folderExists(folder_emb)
-
-if af.fileExists(filePath_graph):
-    G = nx.read_graphml(filePath_graph)
-else:
-    G = initGraph(filePath_edge)
-    nx.write_graphml(G, filePath_graph)
+    if af.fileExists(filePath_graph):
+        G = nx.read_graphml(filePath_graph)
+    else:
+        G = initGraph(filePath_edge)
+        nx.write_graphml(G, filePath_graph)
 
 
-af.folderExists(folder_model)    # для сохранения
-af.folderExists(folder_emb_emb)
+    af.folderExists(folder_model)    # для сохранения
+    af.folderExists(folder_emb_emb)
 
-# Получаем все комбинации параметров
-#all_combinations = list(product(dimensions, walk_length, num_walks, window))
-all_combinations = [[8, 50, 30, 8], [16, 50, 30, 8], [32, 50, 30, 8], [64, 50, 30, 8]]
+    # Получаем все комбинации параметров
+    #all_combinations = list(product(dimensions, walk_length, num_walks, window))
+    all_combinations = [[64, 50, 30, 2]]
 
-for combination in all_combinations:
-    strCombination = '_'.join([str(x) for x in combination])
-    print(f'strCombination = {strCombination}')     # remove
-    modelPath = folder_model + '/model_' + strCombination
-    embPath = folder_emb_emb + '/emb_' + strCombination
+    for combination in all_combinations:
+        strCombination = '_'.join([str(x) for x in combination])
+        print(f'strCombination = {strCombination}')     # remove
+        modelPath = folder_model + '/model_' + strCombination
+        embPath = folder_emb_emb + '/emb_' + strCombination
 
-    if checkCombination(modelPath, embPath):
-        print('next')      # remove
-        continue    # след. комбинация
+        if checkCombination(modelPath, embPath):
+            print('next')      # remove
+            continue    # след. комбинация
 
-    start_time = af.timer()
-    mem_before = af.mem()
+        start_time = af.timer()
+        mem_before = af.mem()
 
-    model = getEmbeddings(G, combination[0], combination[1], combination[2], combination[3], temp_folder)
-    saveAll(model, modelPath, embPath)
+        model = getEmbeddings(G, combination[0], combination[1], combination[2], combination[3], temp_folder)
+        saveAll(model, modelPath, embPath)
 
-    end_time = af.timer()
-    mem_after = af.mem()
+        end_time = af.timer()
+        mem_after = af.mem()
 
-    af.writeExecutionTime(filePath_times, af.getExecutionTime(start_time, end_time), strCombination)
-    af.writeMemUsage(filePath_memory, af.getMemUsage(mem_before, mem_after), strCombination)
+        af.writeExecutionTime(filePath_times, af.getExecutionTime(start_time, end_time), strCombination)
+        af.writeMemUsage(filePath_memory, af.getMemUsage(mem_before, mem_after), strCombination)
 
-print('Success')
+    print('Success')

@@ -30,7 +30,11 @@ def start(df, comb, multi_attr):
 
         for name_attr, df in dict_ma_df.items():
             foundValue = df.loc[df['movieId'] == row['movieId'], name_attr].tolist()
+            if name_attr == 'likes':
+                print(f'foundValue = {foundValue}')
             targets.extend([gvef.getVertexId(vertex_df, name_attr + '_' + str(fv)) for fv in foundValue])
+            if name_attr == 'likes':
+                print('targets extend')
         for j in range(0, len(targets)):
             edge_df.loc[len(edge_df)] = pd.Series({'Source': source, 'Target': targets[j]})
 
@@ -38,8 +42,10 @@ def start(df, comb, multi_attr):
 
 
 dfs = ['df1', 'df2', 'df3', 'df4']
+#'df1',
+
 #combs = ['comb1', 'comb2', 'comb3', 'comb4', 'comb5', 'comb6']
-combs = ['comb5', 'comb6']
+combs = ['comb6'] # 'comb6'
 
 for comb in combs:
     if comb == 'comb1':

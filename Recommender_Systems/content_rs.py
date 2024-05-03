@@ -76,10 +76,13 @@ def calcSim(embeddings, vertex1, vertex2):
     cosine_sim = cosine_similarity(embedding1, embedding2)
     return cosine_sim[0][0]
 
+def getRatingByKG(movieId, merged_df): # если вообще нет оценок пользователя, то берем средний рейтинг из ГЗ
+    return merged_df.loc[merged_df['movieId'] == movieId, 'rating'].values[0]
+
 
 # вычисляем рейтинг фильма row[1] на основе ранее оцененных пользователем row[0]
 # фильмов и на основе их близости с нашим фильмом
-def getAllEmbPredictions(model, embeddings, test_data, train_data, vertex_df, topN, lastMovieVertexId):
+def getAllEmbPredictions(model, embeddings, test_data, train_data, vertex_df, topN, lastMovieVertexId, merged_df):
     predictions = []
     real_ratings = []
     timers = []
@@ -91,7 +94,7 @@ def getAllEmbPredictions(model, embeddings, test_data, train_data, vertex_df, to
         start_time = af.timer()
 
         if len(ratingsUser) == 0:
-            rating = 0
+            rating = getRatingByKG(row[1], merged_df) / 2
         else:
             vertex_movieId = getVertexId(row[1], vertex_df)    # эмбеддинги строятся по vertexId, а у нас movieId
 
@@ -102,10 +105,12 @@ def getAllEmbPredictions(model, embeddings, test_data, train_data, vertex_df, to
                 rating = calcRating(sim_nodes, ratings_nodes)
             else:
                 rating = getEmbPredictions(model, vertex_df, ratingsUser, vertex_movieId, topN, lastMovieVertexId, 3)
+            #print(f'len(ratingsUser) != 0 --> rating = {rating}')
         timers.append(af.timer() - start_time)
 
         if rating == 0:
             counter_zero += 1
+            rating = getRatingByKG(row[1], merged_df) / 2 #
 
         predictions.append(rating)
     return predictions, real_ratings, \

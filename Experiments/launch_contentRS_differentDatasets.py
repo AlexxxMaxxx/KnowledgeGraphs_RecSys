@@ -28,7 +28,8 @@ else:
     print('df create')
 
 for dataset_name in dataset_names:
-    lastMovieVertexId = len(pd.read_csv('../Datasets/merged/' + comb + '/' + dataset_name + '_dataset.csv'))
+    merged_df = pd.read_csv('../Datasets/merged/' + comb + '/' + dataset_name + '_dataset.csv')
+    lastMovieVertexId = len(merged_df)
     filePath_vertex = '../Datasets/visualization_vertex_edge/vertex/vertex_' + dataset_name + '_' + comb + '.csv'
     ratings_path = '../Datasets/merged/' + comb + '/' + 'ratings_' + dataset_name + '.csv'
     train_file = folderName + '/data/train_data_' + dataset_name + '.pkl'
@@ -65,7 +66,8 @@ for dataset_name in dataset_names:
                                                                                              test_data,
                                                                                              train_data, vertex_df,
                                                                                              topN,
-                                                                                             lastMovieVertexId)
+                                                                                             lastMovieVertexId,
+                                                                                             merged_df)
 
 
             af.folderExists(folderName + '/predictions')

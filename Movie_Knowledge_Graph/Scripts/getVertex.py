@@ -9,6 +9,7 @@ warnings.filterwarnings('ignore')
 
 df = 'df4'
 comb = 'comb6'
+
 multi_attr = ['genres', 'likes']
 # посчитать для оставшихся комбинаций
 

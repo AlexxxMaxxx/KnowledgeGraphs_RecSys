@@ -24,6 +24,11 @@ for comb in combs:
         ratings_df = ratings_df[ratings_df['rating'] >= threshold]
         ratings_df.rename(columns={'userId': 'likes'}, inplace=True)
         del ratings_df['rating']
+        new_order = ['movieId', 'likes']
+        ratings_df = ratings_df[new_order]
+        # Сортируем DataFrame по столбцу movieId
+        ratings_df = ratings_df.sort_values(by='movieId')
+
         print(ratings_df.head(10))
 
         filePath_likes = '../../Datasets/merged/' + comb + '/' + df + '_multi_attr/' + df + '_likes.csv'
