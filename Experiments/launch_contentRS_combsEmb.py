@@ -82,7 +82,7 @@ def start(dataset_name, comb, all_combinations, topN):
             continue
 
 
-dfs = ['df1']
+dfs = ['df3']
 #combs = ['comb1', 'comb2', 'comb3', 'comb4', 'comb5', 'comb6']
 combs = ['comb1']
 
@@ -92,8 +92,9 @@ for comb in combs:
         print(f'df = {dataset_name}')
         merged_df = pd.read_csv('../Datasets/merged/' + comb + '/' + dataset_name + '_dataset.csv')
         lastMovieVertexId = len(merged_df)
-        topsN = [5, 20, 40, 80, 160]
+        topsN = [64, 128, 256]
         for topN in topsN:
+            print(topN)
         #topN = 10
             fraction_test = 0.05
             all_combinations = [[64, 50, 30, 2]]

@@ -30,7 +30,7 @@ walk_length = [40, 80, 120]
 num_walks = [25, 50, 75]
 window = [5, 10, 15]
 
-combs = ['comb2', 'comb3', 'comb4']
+combs = ['comb6']
 for comb in combs:
     df = 'df1'
 
