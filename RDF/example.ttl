@@ -1,0 +1,93 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wd: <http://www.wikidata.org/wiki/> .
+@prefix ex: <http://example.org/> .
+
+@prefix imdb_movie: <https://m.imdb.com/title/> .
+@prefix imdb_person: <https://m.imdb.com/name/> .
+@prefix imdb: <https://m.imdb.com/> .
+
+
+imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;
+
+                        dc:title    "Toy Story"@en ;
+                        dc:year     "1995"^^xsd:integer ;
+                        imdb:rating "8.3"^^xsd:float ;
+                        imdb:votes "1060854"^^xsd:integer ;
+                        imdb:placeInTop250 "77"^^xsd:integer ;
+                        imdb:runtimes "81"^^xsd:integer ;
+                        imdb:plot   "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy's bedroom."@en ;
+
+                        imdb:wasReleased wd:Q30 ;
+
+                        imdb:hasGenre wd:Q202866 ;
+                        imdb:hasGenre wd:Q40831 ;
+                        imdb:hasGenre wd:Q132311 ;
+
+                        imdb:hasDirector imdb_person:nm0005124 ;
+                        imdb:hasWriter  imdb_person:nm0005124 ;
+                        imdb:hasWriter  imdb_person:nm0230032 ;
+                        imdb:hasWriter  imdb_person:nm0004056 ;
+                        imdb:hasActor  imdb_person:nm0000158 ;
+                        imdb:hasActor  imdb_person:nm0000741 ;
+                        imdb:hasActor  imdb_person:nm0725543 .
+
+wd:Q11424   dc:title  "Movie"@en ;
+            rdf:type: rdfs:Class .
+
+wd:Q6256    dc:title    "Countries"@en ;
+            rdf:type: rdfs:Class .
+wd:Q30     dc:title    "United_States"@en ;
+           rdfs:subClassOf wd:Q6256  .
+
+wd:Q28640   dc:title    "Profession"@en ;
+            rdf:type: rdfs:Class .
+wd:Q33999   dc:title    "Actor"@en ;
+              rdfs:subClassOf wd:Q28640 .
+wd:Q3282637   dc:title    "Producer"@en ;
+              rdfs:subClassOf wd:Q28640 .
+wd:Q36180     dc:title    "Writer"@en ;
+              rdfs:subClassOf wd:Q28640 .
+wd:Q2526255   dc:title    "Director"@en ;
+              rdfs:subClassOf wd:Q28640 .
+
+wd:Q483394  dc:title    "Genres"@en ;
+            rdf:type: rdfs:Class .
+
+wd:Q40831   dc:title    "Comedy"@en ;
+            rdfs:subClassOf wd:Q483394 .
+
+wd:Q202866  dc:title    "Animation"@en ;
+            rdfs:subClassOf wd:Q483394 .
+
+wd:Q132311  dc:title    "Fantasy"@en ;
+            rdfs:subClassOf wd:Q483394 .
+
+imdb_person:nm0005124   foaf:name   "John Lasseter"@en ;
+                        rdf:type wd:Q2526255 ;
+                        rdf:type wd:Q36180 ;
+                        imdb:isDirector imdb_movie:tt00114709 ;
+                        imdb:isWriter imdb_movie:tt00114709 .
+
+imdb_person:nm0230032   foaf:name "Pete Docter"@en ;
+                        rdf:type wd:Q36180 ;
+                        imdb:isWriter imdb_movie:tt00114709 .
+
+imdb_person:nm0004056   foaf:name "Andrew Stanton"@en;
+                        rdf:type wd:Q36180 ;
+                        imdb:isWriter imdb_movie:tt00114709 .
+
+imdb_person:nm0000158   foaf:name "Tom Hanks"@en;
+                        rdf:type wd:Q33999 ;
+                        imdb:isActor imdb_movie:tt00114709 .
+
+imdb_person:nm0000741   foaf:name "Tim Allen"@en;
+                        rdf:type wd:Q33999 ;
+                        imdb:isActor imdb_movie:tt00114709 .
+
+imdb_person:nm0725543   foaf:name "Don Rickles"@en;
+                        rdf:type wd:Q33999 ;
+                        imdb:isActor imdb_movie:tt00114709 .
