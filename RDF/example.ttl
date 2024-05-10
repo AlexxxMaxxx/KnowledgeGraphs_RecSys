@@ -6,34 +6,36 @@
 @prefix wd: <http://www.wikidata.org/wiki/> .
 @prefix ex: <http://example.org/> .
 
+@prefix imdb_preds: <https://github.com/AlexxxMaxxx/KnowledgeGraphs_RecSys/blob/master/RDF/dict_imdb_predicates.ttl> .
 @prefix imdb_movie: <https://m.imdb.com/title/> .
 @prefix imdb_person: <https://m.imdb.com/name/> .
-@prefix imdb: <https://m.imdb.com/> .
 
 
 imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;
 
                         dc:title    "Toy Story"@en ;
                         dc:year     "1995"^^xsd:integer ;
-                        imdb:rating "8.3"^^xsd:float ;
-                        imdb:votes "1060854"^^xsd:integer ;
-                        imdb:placeInTop250 "77"^^xsd:integer ;
-                        imdb:runtimes "81"^^xsd:integer ;
-                        imdb:plot   "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy's bedroom."@en ;
+                        imdb_preds:rating "8.3"^^xsd:float ;
+                        imdb_preds:votes "1060854"^^xsd:integer ;
+                        imdb_preds:top250 "77"^^xsd:integer ;
+                        imdb_preds:runtimes "81"^^xsd:integer ;
+                        imdb_preds:plot   "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy's bedroom."@en ;
 
-                        imdb:wasReleased wd:Q30 ;
+                        imdb_preds:wasReleased wd:Q30 ;
 
-                        imdb:hasGenre wd:Q202866 ;
-                        imdb:hasGenre wd:Q40831 ;
-                        imdb:hasGenre wd:Q132311 ;
+                        imdb_preds:hasGenre wd:Q202866 ;
+                        imdb_preds:hasGenre wd:Q40831 ;
+                        imdb_preds:hasGenre wd:Q132311 ;
 
-                        imdb:hasDirector imdb_person:nm0005124 ;
-                        imdb:hasWriter  imdb_person:nm0005124 ;
-                        imdb:hasWriter  imdb_person:nm0230032 ;
-                        imdb:hasWriter  imdb_person:nm0004056 ;
-                        imdb:hasActor  imdb_person:nm0000158 ;
-                        imdb:hasActor  imdb_person:nm0000741 ;
-                        imdb:hasActor  imdb_person:nm0725543 .
+                        imdb_preds:hasDirector imdb_person:nm0005124 ;
+
+                        imdb_preds:hasWriter  imdb_person:nm0005124 ;
+                        imdb_preds:hasWriter  imdb_person:nm0230032 ;
+                        imdb_preds:hasWriter  imdb_person:nm0004056 ;
+
+                        imdb_preds:hasActor  imdb_person:nm0000158 ;
+                        imdb_preds:hasActor  imdb_person:nm0000741 ;
+                        imdb_preds:hasActor  imdb_person:nm0725543 .
 
 wd:Q11424   dc:title  "Movie"@en ;
             rdf:type: rdfs:Class .
@@ -69,25 +71,25 @@ wd:Q132311  dc:title    "Fantasy"@en ;
 imdb_person:nm0005124   foaf:name   "John Lasseter"@en ;
                         rdf:type wd:Q2526255 ;
                         rdf:type wd:Q36180 ;
-                        imdb:isDirector imdb_movie:tt00114709 ;
-                        imdb:isWriter imdb_movie:tt00114709 .
+                        imdb_preds:isDirector imdb_movie:tt00114709 ;
+                        imdb_preds:isWriter imdb_movie:tt00114709 .
 
 imdb_person:nm0230032   foaf:name "Pete Docter"@en ;
                         rdf:type wd:Q36180 ;
-                        imdb:isWriter imdb_movie:tt00114709 .
+                        imdb_preds:isWriter imdb_movie:tt00114709 .
 
 imdb_person:nm0004056   foaf:name "Andrew Stanton"@en;
                         rdf:type wd:Q36180 ;
-                        imdb:isWriter imdb_movie:tt00114709 .
+                        imdb_preds:isWriter imdb_movie:tt00114709 .
 
 imdb_person:nm0000158   foaf:name "Tom Hanks"@en;
                         rdf:type wd:Q33999 ;
-                        imdb:isActor imdb_movie:tt00114709 .
+                        imdb_preds:isActor imdb_movie:tt00114709 .
 
 imdb_person:nm0000741   foaf:name "Tim Allen"@en;
                         rdf:type wd:Q33999 ;
-                        imdb:isActor imdb_movie:tt00114709 .
+                        imdb_preds:isActor imdb_movie:tt00114709 .
 
 imdb_person:nm0725543   foaf:name "Don Rickles"@en;
                         rdf:type wd:Q33999 ;
-                        imdb:isActor imdb_movie:tt00114709 .
+                        imdb_preds:isActor imdb_movie:tt00114709 .

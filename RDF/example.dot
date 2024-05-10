@@ -1,81 +1,81 @@
 digraph { 
  node [ fontname="DejaVu Sans" ] ; 
-	node2 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node4 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
-	node5 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
-	node6 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node0 -> node8 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node1 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node10 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
-	node0 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
-	node9 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node0 -> node14 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasDirector</font> > ] ;
-	node15 -> node13 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node14 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
-	node8 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
-	node0 -> node5 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
-	node4 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node17 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node7 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
-	node0 -> node14 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
-	node12 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node0 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
-	node2 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
-	node19 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node14 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node0 -> node15 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:wasReleased</font> > ] ;
-	node14 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isDirector</font> > ] ;
-	node0 -> node19 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
-	node11 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
-	node3 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node10 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node16 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
-	node14 -> node16 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node0 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
-	node5 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
-	node0 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
-	node0 -> node2 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
-	node13 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
-	node3 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
-	node0 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
-# https://m.imdb.com/title/tt00114709 node0
-node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Toy Story</B></td></tr><tr><td href='https://m.imdb.com/title/tt00114709' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/title/tt00114709</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Toy Story&quot;@en</td></tr><tr><td align='left'>dc:year</td><td align='left'>&quot;1995&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:placeInTop250</td><td align='left'>&quot;77&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:plot</td><td align='left'>&quot;A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy&#x27;s bedroom.&quot;@en</td></tr><tr><td align='left'>imdb:rating</td><td align='left'>&quot;8.3&quot;^^xsd:float</td></tr><tr><td align='left'>imdb:runtimes</td><td align='left'>&quot;81&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:votes</td><td align='left'>&quot;1060854&quot;^^xsd:integer</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q36180 node1
-node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Writer</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q36180' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q36180</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Writer&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0004056 node2
-node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Andrew Stanton</B></td></tr><tr><td href='https://m.imdb.com/name/nm0004056' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0004056</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Andrew Stanton&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0725543 node3
-node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Don Rickles</B></td></tr><tr><td href='https://m.imdb.com/name/nm0725543' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0725543</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Don Rickles&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0230032 node4
-node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Pete Docter</B></td></tr><tr><td href='https://m.imdb.com/name/nm0230032' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0230032</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Pete Docter&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0000158 node5
-node5 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Tom Hanks</B></td></tr><tr><td href='https://m.imdb.com/name/nm0000158' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0000158</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Tom Hanks&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q3282637 node6
-node6 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Producer</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q3282637' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q3282637</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Producer&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q28640 node7
-node7 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Profession</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q28640' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q28640</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Profession&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q11424 node8
-node8 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Movie</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q11424' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q11424</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Movie&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q33999 node9
-node9 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Actor</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q33999' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q33999</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Actor&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0000741 node10
-node10 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Tim Allen</B></td></tr><tr><td href='https://m.imdb.com/name/nm0000741' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0000741</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Tim Allen&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q483394 node11
-node11 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Genres</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q483394' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q483394</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Genres&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q40831 node12
-node12 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Comedy</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q40831' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q40831</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Comedy&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q6256 node13
-node13 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Countries</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q6256' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q6256</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Countries&quot;@en</td></tr></table> > ] 
-# https://m.imdb.com/name/nm0005124 node14
-node14 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>John Lasseter</B></td></tr><tr><td href='https://m.imdb.com/name/nm0005124' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0005124</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;John Lasseter&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q30 node15
-node15 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>United_States</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q30' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q30</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;United_States&quot;@en</td></tr></table> > ] 
+	node0 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
+	node3 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node5 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
+	node1 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:wasReleased</font> > ] ;
+	node8 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node2 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
+	node9 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node5 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node0 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isDirector</font> > ] ;
+	node2 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node1 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasDirector</font> > ] ;
+	node1 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
+	node1 -> node14 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
+	node7 -> node15 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node11 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node1 -> node6 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
+	node1 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
+	node0 -> node16 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node1 -> node5 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
+	node12 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
+	node4 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node1 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node16 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node19 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node1 -> node19 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasGenre</font> > ] ;
+	node10 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
+	node15 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
+	node13 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node14 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node18 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>http://www.w3.org/1999/02/22-rdf-syntax-ns#type:</font> > ] ;
+	node1 -> node8 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasActor</font> > ] ;
+	node6 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node6 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isWriter</font> > ] ;
+	node8 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
+	node0 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdf:type</font> > ] ;
+	node3 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:isActor</font> > ] ;
+	node1 -> node2 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
+	node1 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>imdb:hasWriter</font> > ] ;
+# https://m.imdb.com/name/nm0005124 node0
+node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>John Lasseter</B></td></tr><tr><td href='https://m.imdb.com/name/nm0005124' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0005124</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;John Lasseter&quot;@en</td></tr></table> > ] 
+# https://m.imdb.com/title/tt00114709 node1
+node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Toy Story</B></td></tr><tr><td href='https://m.imdb.com/title/tt00114709' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/title/tt00114709</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Toy Story&quot;@en</td></tr><tr><td align='left'>dc:year</td><td align='left'>&quot;1995&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:placeInTop250</td><td align='left'>&quot;77&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:plot</td><td align='left'>&quot;A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy&#x27;s bedroom.&quot;@en</td></tr><tr><td align='left'>imdb:runtimes</td><td align='left'>&quot;81&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb:votes</td><td align='left'>&quot;1060854&quot;^^xsd:integer</td></tr><tr><td align='left'>imdb_predicates:rating</td><td align='left'>&quot;8.3&quot;^^xsd:float</td></tr></table> > ] 
+# https://m.imdb.com/name/nm0230032 node2
+node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Pete Docter</B></td></tr><tr><td href='https://m.imdb.com/name/nm0230032' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0230032</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Pete Docter&quot;@en</td></tr></table> > ] 
+# https://m.imdb.com/name/nm0000741 node3
+node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Tim Allen</B></td></tr><tr><td href='https://m.imdb.com/name/nm0000741' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0000741</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Tim Allen&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q33999 node4
+node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Actor</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q33999' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q33999</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Actor&quot;@en</td></tr></table> > ] 
+# https://m.imdb.com/name/nm0725543 node5
+node5 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Don Rickles</B></td></tr><tr><td href='https://m.imdb.com/name/nm0725543' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0725543</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Don Rickles&quot;@en</td></tr></table> > ] 
+# https://m.imdb.com/name/nm0004056 node6
+node6 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Andrew Stanton</B></td></tr><tr><td href='https://m.imdb.com/name/nm0004056' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0004056</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Andrew Stanton&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q30 node7
+node7 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>United_States</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q30' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q30</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;United_States&quot;@en</td></tr></table> > ] 
+# https://m.imdb.com/name/nm0000158 node8
+node8 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Tom Hanks</B></td></tr><tr><td href='https://m.imdb.com/name/nm0000158' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>https://m.imdb.com/name/nm0000158</font></td></tr><tr><td align='left'>foaf:name</td><td align='left'>&quot;Tom Hanks&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q40831 node9
+node9 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Comedy</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q40831' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q40831</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Comedy&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q483394 node10
+node10 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Genres</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q483394' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q483394</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Genres&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q36180 node11
+node11 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Writer</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q36180' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q36180</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Writer&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q28640 node12
+node12 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Profession</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q28640' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q28640</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Profession&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q3282637 node13
+node13 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Producer</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q3282637' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q3282637</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Producer&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q202866 node14
+node14 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Animation</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q202866' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q202866</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Animation&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q6256 node15
+node15 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Countries</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q6256' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q6256</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Countries&quot;@en</td></tr></table> > ] 
 # http://www.wikidata.org/wiki/Q2526255 node16
 node16 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Director</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q2526255' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q2526255</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Director&quot;@en</td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q132311 node17
-node17 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Fantasy</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q132311' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q132311</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Fantasy&quot;@en</td></tr></table> > ] 
-# http://www.w3.org/2000/01/rdf-schema#Class node18
-node18 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Class</B></td></tr><tr><td href='http://www.w3.org/2000/01/rdf-schema#Class' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2000/01/rdf-schema#Class</font></td></tr></table> > ] 
-# http://www.wikidata.org/wiki/Q202866 node19
-node19 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Animation</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q202866' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q202866</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Animation&quot;@en</td></tr></table> > ] 
+# http://www.w3.org/2000/01/rdf-schema#Class node17
+node17 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Class</B></td></tr><tr><td href='http://www.w3.org/2000/01/rdf-schema#Class' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2000/01/rdf-schema#Class</font></td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q11424 node18
+node18 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Movie</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q11424' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q11424</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Movie&quot;@en</td></tr></table> > ] 
+# http://www.wikidata.org/wiki/Q132311 node19
+node19 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Fantasy</B></td></tr><tr><td href='http://www.wikidata.org/wiki/Q132311' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.wikidata.org/wiki/Q132311</font></td></tr><tr><td align='left'>dc:title</td><td align='left'>&quot;Fantasy&quot;@en</td></tr></table> > ] 
 }

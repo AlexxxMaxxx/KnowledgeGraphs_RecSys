@@ -1,6 +1,54 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wd: <http://www.wikidata.org/wiki/> .
 
 :rating rdf:type rdf:Property ;
-        rdfs:domain wd:Q11424 .
+        rdfs:domain wd:Q11424 ;
+        rdfs:range xsd:float .
+
+:votes rdf:type rdf:Property ;
+       rdfs:domain wd:Q11424 ;
+       rdfs:range xsd:integer .
+
+:top250 rdf:type rdf:Property ;
+        rdfs:domain wd:Q11424 ;
+        rdfs:range xsd:integer .
+
+:runtimes rdf:type rdf:Property ;
+          rdfs:domain wd:Q11424 ;
+          rdfs:range xsd:integer .
+
+:plot rdf:type rdf:Property ;
+      rdfs:domain wd:Q11424 ;
+      rdfs:range xsd:string .
+
+:wasReleased rdf:type rdf:Property ;
+             rdfs:domain wd:Q11424 ;
+             rdfs:range xsd:string .
+
+:hasGenre rdf:type rdf:Property ;
+          rdfs:domain wd:Q11424 ;
+          rdfs:range wd:Q483394 .
+
+:hasDirector  rdf:type rdf:Property ;
+              rdfs:domain wd:Q11424 ;
+              rdfs:range wd:Q2526255 .
+
+:hasWriter  rdf:type rdf:Property ;
+            rdfs:domain wd:Q11424 ;
+            rdfs:range wd:Q36180 .
+
+:hasActor  rdf:type rdf:Property ;
+           rdfs:domain wd:Q11424 ;
+           rdfs:range wd:Q33999 .
+
+:hasProducer  rdf:type rdf:Property ;
+              rdfs:domain wd:Q11424 ;
+              rdfs:range wd:Q3282637 .
+
+:isDirector  rdf:type rdf:Property .
+:isWriter    rdf:type rdf:Property .
+:isActor     rdf:type rdf:Property .
+
+
