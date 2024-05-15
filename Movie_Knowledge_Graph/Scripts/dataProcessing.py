@@ -4,10 +4,11 @@ import pandas as pd
 
 # comb1: rating movieId, title, genres и releaseYear - комбинация атрибутов по умолчанию
 # df1
-df = 'df4'    # 1 this
+df = 'df*'    # 1 this
+#df = 'df4'    # 1 this
 comb = 'comb4'    # 2 this
-filePath_source = '../../Datasets/experiments/subset/keys_dict/' + df + '.csv'
-
+#filePath_source = '../../Datasets/experiments/subset/keys_dict/' + df + '.csv'
+filePath_source = '../../Datasets/more_info/keys_dict.csv'
 '''source_columns = ['IMDb_Id', 'cast', 'director', 'producer', 'writer', 'stars', 
                   'countries', 'rating', 'votes', 'top 250 rank', 'plot', 'runtimes']'''
 # по умолчанию граф содержит movieId, genres, titles, releaseYears
@@ -37,6 +38,7 @@ print(f'Исходный набор данных с выбранными кол�
 # замена 'IMDb_Id' --> 'movieId'
 input_df = dpf.replaceIMDbToMovieID(input_df)
 print(f'Набор данных с movieId:\n {input_df.head(10)}')
+print(f'len(input_df) = {len(input_df)}')
 
 
 # + title, genres и releaseYear - всегда добавляем
@@ -44,6 +46,7 @@ input_df = dpf.addColumn(input_df, filePath_titles, 'title')
 input_df = dpf.addColumn(input_df, filePath_genres, 'genres')
 input_df = dpf.addColumn(input_df, filePath_years, 'releaseYear')
 
+print(f'shape(input_df) = {input_df.shape}')
 # для удобства поменяем порядок
 temp = input_df.pop('movieId')
 input_df.insert(0, 'movieId', temp)

@@ -1,9 +1,6 @@
-import additionalFunctions as af
 import matplotlib.pyplot as plt
 from math import sqrt
-import pandas as pd
 import numpy as np
-import pickle
 
 
 def modified_mae(predictions_RS, predictions_hybrid):
@@ -40,6 +37,10 @@ def hybridPrediction(predictions_RS, predictions_EMB, type):
     chart_maeVal = []
     weight = np.linspace(0, 1, 21)
 
+    min_rmse = 99999
+    min_mae = 99999
+    w_min = -1
+
     for w in weight:
         predictions_hybrid = []
         for pred_RS, pred_EMB in zip(predictions_RS, predictions_EMB):
@@ -51,43 +52,13 @@ def hybridPrediction(predictions_RS, predictions_EMB, type):
         mae_value = modified_mae(predictions_RS, predictions_hybrid)
         chart_maeVal.append([w, mae_value])
 
+        if mae_value < min_mae:
+            min_mae = mae_value
+            min_rmse = rmse_value
+            w_min = w
+
     getPlot(chart_rmseVal, 'RMSE', 'red', type + ' + Content KG')
     getPlot(chart_maeVal, 'MAE', 'blue', type + ' + Content KG')
-
-
-comb = 'comb1'
-df = 'df1'
-
-# collaborative RS
-RS_type = 'KNNBasic_Item'
-
-# content RS
-combination = '32_50_30_8'
-
-filePath_clbrRS = '../Datasets/experiments/collaborative_rs/' + RS_type + '/' + df + '_' + comb
-filePath_model = filePath_clbrRS + '/models/' + RS_type + '.pkl'
-
-# Загрузка сохраненной модели из файла
-with open(filePath_model, 'rb') as file:
-    KNNBasic_User_model = pickle.load(file)
-
-test_data_path = filePath_clbrRS + '/test_data_' + df + '.pkl'
-test_data = af.pikcle_load(test_data_path)
-
-predictions_RS = KNNBasic_User_model.test(test_data)
-
-# content RS
-combination = '32_50_30_8'
-filePath_predictions_CRS = '../Datasets/experiments/content_rs/combsEmb/' + \
-                           df + '_' + comb + '/predictions/predict_' + combination + '.csv'
-predictions_CRS = pd.read_csv(filePath_predictions_CRS, header=None)
-column_names = ['est']  # замените на нужные названия столбцов
-predictions_CRS.columns = column_names
-predictions_CRS = predictions_CRS['est'].tolist()
-
-
-print(predictions_CRS)
-
-hybridPrediction(predictions_RS, predictions_CRS, RS_type)
-
-# другие способы гибридизации
+    print(f'min_mae = {min_mae}')
+    print(f'min_rmse = {min_rmse}')
+    print(f'w_clbr = {w_min}, w_content = {1-w_min}\n')

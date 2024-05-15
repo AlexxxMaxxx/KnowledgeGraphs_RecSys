@@ -14,33 +14,29 @@
 imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;
 
                         dc:title    "Toy Story"@en ;
-                        dc:year     "1995"^^xsd:integer ;
+                        dc:year     "1995"^^xsd:date ;
                         imdb_preds:rating "8.3"^^xsd:float ;
                         imdb_preds:votes "1060854"^^xsd:integer ;
                         imdb_preds:top250 "77"^^xsd:integer ;
                         imdb_preds:runtimes "81"^^xsd:integer ;
-                        imdb_preds:plot   "A cowboy doll is profoundly threatened and jealous when a new spaceman action figure supplants him as top toy in a boy's bedroom."@en ;
+                        imdb_preds:plot   "A cowboy doll is profoundly threatened and jealous."@en ;
 
                         imdb_preds:wasReleased wd:Q30 ;
 
-                        imdb_preds:hasGenre wd:Q202866 ;
                         imdb_preds:hasGenre wd:Q40831 ;
                         imdb_preds:hasGenre wd:Q132311 ;
 
                         imdb_preds:hasDirector imdb_person:nm0005124 ;
 
                         imdb_preds:hasWriter  imdb_person:nm0005124 ;
-                        imdb_preds:hasWriter  imdb_person:nm0230032 ;
-                        imdb_preds:hasWriter  imdb_person:nm0004056 ;
 
                         imdb_preds:hasActor  imdb_person:nm0000158 ;
-                        imdb_preds:hasActor  imdb_person:nm0000741 ;
-                        imdb_preds:hasActor  imdb_person:nm0725543 .
+                        imdb_preds:hasActor  imdb_person:nm0000741 .
 
 wd:Q11424   dc:title  "Movie"@en ;
             rdf:type: rdfs:Class .
 
-wd:Q6256    dc:title    "Countries"@en ;
+wd:Q6256    dc:title    "Country"@en ;
             rdf:type: rdfs:Class .
 wd:Q30     dc:title    "United_States"@en ;
            rdfs:subClassOf wd:Q6256  .
@@ -49,20 +45,15 @@ wd:Q28640   dc:title    "Profession"@en ;
             rdf:type: rdfs:Class .
 wd:Q33999   dc:title    "Actor"@en ;
               rdfs:subClassOf wd:Q28640 .
-wd:Q3282637   dc:title    "Producer"@en ;
-              rdfs:subClassOf wd:Q28640 .
 wd:Q36180     dc:title    "Writer"@en ;
               rdfs:subClassOf wd:Q28640 .
 wd:Q2526255   dc:title    "Director"@en ;
               rdfs:subClassOf wd:Q28640 .
 
-wd:Q483394  dc:title    "Genres"@en ;
+wd:Q483394  dc:title    "Genre"@en ;
             rdf:type: rdfs:Class .
 
 wd:Q40831   dc:title    "Comedy"@en ;
-            rdfs:subClassOf wd:Q483394 .
-
-wd:Q202866  dc:title    "Animation"@en ;
             rdfs:subClassOf wd:Q483394 .
 
 wd:Q132311  dc:title    "Fantasy"@en ;
@@ -74,22 +65,10 @@ imdb_person:nm0005124   foaf:name   "John Lasseter"@en ;
                         imdb_preds:isDirector imdb_movie:tt00114709 ;
                         imdb_preds:isWriter imdb_movie:tt00114709 .
 
-imdb_person:nm0230032   foaf:name "Pete Docter"@en ;
-                        rdf:type wd:Q36180 ;
-                        imdb_preds:isWriter imdb_movie:tt00114709 .
-
-imdb_person:nm0004056   foaf:name "Andrew Stanton"@en;
-                        rdf:type wd:Q36180 ;
-                        imdb_preds:isWriter imdb_movie:tt00114709 .
-
 imdb_person:nm0000158   foaf:name "Tom Hanks"@en;
                         rdf:type wd:Q33999 ;
                         imdb_preds:isActor imdb_movie:tt00114709 .
 
 imdb_person:nm0000741   foaf:name "Tim Allen"@en;
-                        rdf:type wd:Q33999 ;
-                        imdb_preds:isActor imdb_movie:tt00114709 .
-
-imdb_person:nm0725543   foaf:name "Don Rickles"@en;
                         rdf:type wd:Q33999 ;
                         imdb_preds:isActor imdb_movie:tt00114709 .

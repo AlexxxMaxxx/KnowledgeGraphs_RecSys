@@ -7,9 +7,9 @@ import pandas as pd
 # Тут меняем-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
 max_size = 100000
 test_size = 0.05
-dataset_name = 'df3'
-comb = 'comb1'
-RS_type = 'KNNBasic_User'    # KNNBasic_Item
+dataset_name = 'df1'
+comb = 'comb4'
+RS_type = 'KNNBasic_Item'    # KNNBasic_Item
 repeat = True
 
 ratings_path = '../Datasets/merged/' + comb + '/' + 'ratings_' + dataset_name + '.csv'
@@ -21,6 +21,7 @@ af.folderExists(folderName)
 
 filePath_results = folderName + '/info_df.csv'
 predictions_filePath = folderName + '/predictions_df.csv'
+
 train_file = folderName + '/train_data_' + dataset_name + '.pkl'
 test_file = folderName + '/test_data_' + dataset_name + '.pkl'
 

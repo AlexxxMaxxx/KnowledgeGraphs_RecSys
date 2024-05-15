@@ -4,11 +4,11 @@ import pandas as pd
 import io
 
 def getTSV(embeddings, start, end, nameCase, vertex_df):
-    embTsv = folder_cmbn + '/embeddings_' + nameCase + strCombination + '.tsv'
-    metaTsv = folder_cmbn + '/metadata_' + nameCase + strCombination + '.tsv'
+    embTsv = folder_tsv + '/embeddings_' + nameCase + strCombination + '.tsv'
+    metaTsv = folder_tsv + '/metadata_' + nameCase + strCombination + '.tsv'
 
     out_emb = io.open(embTsv, "w", encoding="utf-8")
-    out_meta = io.open(metaTsv, "w", encoding="utf-8") # до сюда все хорошо
+    out_meta = io.open(metaTsv, "w", encoding="utf-8")    # до сюда все хорошо
 
     for i in range(start, end):
         vector = embeddings[str(i)]
@@ -24,26 +24,29 @@ def getTSV(embeddings, start, end, nameCase, vertex_df):
 
 
 # тут менять
-strCombination = '8_10_5_2'
-fileName_merged_dataset = '../../Datasets/random/1k.csv'
+strCombination = '64_50_30_2'
+df = 'df1'
+comb = 'comb1'
+
+fileName_merged_dataset = '../../Datasets/merged/' + comb + '/' + df + '_dataset.csv'
+
 
 # по умолчанию
 merged_df = pd.read_csv(fileName_merged_dataset)
 SIZE_DF = len(merged_df)
 
-filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex_' + str(SIZE_DF) + '.csv'
+filePath_vertex = '../../Datasets/visualization_vertex_edge/vertex/vertex_' + df + '_' + comb + '.csv'
 vertex_df = pd.read_csv(filePath_vertex)
 
-folder_tsv = '../../Datasets/emb_data/' + str(SIZE_DF) + '/tsv'
-folder_cmbn = folder_tsv + '/cmbn_' + strCombination
-folder_emb = '../../Datasets/emb_data/' + str(SIZE_DF) + '/emb'
-
-
+folder_tsv = '../../Datasets/emb_data/' + comb + '_' + df + '/tsv'
 af.folderExists(folder_tsv)
-af.folderExists(folder_cmbn)
 
+#folder_cmbn = folder_tsv + '/cmbn_' + strCombination
+folder_emb = '../../Datasets/emb_data/' + comb + '_' + df + '/emb'
 embPath = folder_emb + '/emb_' + strCombination
 embeddings = KeyedVectors.load_word2vec_format(embPath)
+
+#af.folderExists(folder_cmbn)
 
 getTSV(embeddings, 1, SIZE_DF + 1, 'movies_', vertex_df)    # только фильмы
 getTSV(embeddings, SIZE_DF + 1, len(embeddings) + 1, 'atributes_', vertex_df)    # только атрибуты

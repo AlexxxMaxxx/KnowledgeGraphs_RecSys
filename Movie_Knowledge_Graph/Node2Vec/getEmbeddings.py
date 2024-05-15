@@ -42,6 +42,7 @@ for comb in combs:
     filePath_edge = '../../Datasets/visualization_vertex_edge/edge/edge_' + df + '_' + comb + '.csv'
 
     folder_emb = '../../Datasets/emb_data/' + comb + '_' + df + '/'
+
     folder_emb_emb = folder_emb + 'emb'
     folder_model = folder_emb + 'model'
     print(folder_model)

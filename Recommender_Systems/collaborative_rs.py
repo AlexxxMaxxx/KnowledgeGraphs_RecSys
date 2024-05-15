@@ -8,9 +8,6 @@ from surprise import KNNBasic
 import additionalFunctions as af
 import pandas as pd
 
-from IPython.display import display
-from surprise import SVD
-
 
 def getInfo(ratings_df):
     print(f'Количество записей: {len(ratings_df)}')
@@ -61,7 +58,6 @@ def startSurprise(ratings_df, test_size, train_file, test_file):
     af.pickle_dump(train_file, train_data.build_testset())
     af.pickle_dump(test_file, test_data)
     return ratings_data, train_data, test_data
-
 
 # Часто используют десятикратную прекрестную валидацию.
 def gridSearch_KNNBasic(userBased, ratings_data):    # True or False

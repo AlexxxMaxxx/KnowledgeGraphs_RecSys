@@ -10,7 +10,8 @@ ax.legend()
 plt.xlabel('topN')
 plt.ylabel('error')
 plt.show()
-plt.savefig('graphics/topN_MAE.png')
+plt.savefig('topN_MAE.png', dpi = 1000)
+
 
 x = [1, 2, 4, 8, 10, 16, 32, 64, 128, 256]
 y = [0.9777, 0.9761, 0.9656, 0.9372, 0.9312, 0.9257, 0.9261, 0.9316, 0.9349, 0.9374]
@@ -20,4 +21,4 @@ ax.legend()
 plt.xlabel('topN')
 plt.ylabel('error')
 plt.show()
-#plt.savefig('graphics/topN_RMSE.pdf')
+#plt.savefig('Graphics/topN_RMSE.pdf')
