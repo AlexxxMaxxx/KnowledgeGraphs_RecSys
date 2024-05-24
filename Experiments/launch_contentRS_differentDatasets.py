@@ -10,11 +10,11 @@ import pandas as pd
 import numpy as np
 
 dataset_names = ['df1', 'df2', 'df3', 'df4']
-comb = 'comb1'
+comb = 'comb4'
 
-topN = 10
+topN = 16
 fraction_test = 0.05
-max_size = 200000
+max_size = 100000
 
 folderName = '../Datasets/experiments/content_rs/differentDatasets/'
 af.folderExists(folderName)
@@ -47,7 +47,7 @@ for dataset_name in dataset_names:
     folder_model = folder_emb + 'model'
 
 
-    all_combinations = [[32, 20, 10, 2], [64, 40, 20, 5], [128, 80, 40, 10]]
+    all_combinations = [[64, 50, 30, 2]]
     for combination in all_combinations:
         strCombination = '_'.join([str(x) for x in combination])
         print(f'strCombination = {strCombination}')  # remove

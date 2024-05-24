@@ -41,11 +41,11 @@ def start(df, comb, multi_attr):
     edge_df.to_csv(filePath_edge, index=False)
 
 
-dfs = ['df1', 'df2', 'df3', 'df4']
+dfs = ['df*']
 #'df1',
 
 #combs = ['comb1', 'comb2', 'comb3', 'comb4', 'comb5', 'comb6']
-combs = ['comb6'] # 'comb6'
+combs = ['comb4'] # 'comb6'
 
 for comb in combs:
     if comb == 'comb1':

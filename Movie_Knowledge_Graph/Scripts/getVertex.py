@@ -7,10 +7,10 @@ warnings.filterwarnings('ignore')
 # comb3: comb2 + director, producer
 # исходные данные
 
-df = 'df4'
-comb = 'comb6'
+df = 'df*'
+comb = 'comb4'
 
-multi_attr = ['genres', 'likes']
+multi_attr = ['genres', 'director', 'producer', 'writer', 'stars', 'countries']
 # посчитать для оставшихся комбинаций
 
 
