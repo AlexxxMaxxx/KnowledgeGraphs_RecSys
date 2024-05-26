@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../Recommender_Systems/')
-import hybrid_rs as hrs
+import hybrid_rs_folds as hrs
 
 import additionalFunctions as af
 import pandas as pd
@@ -24,14 +24,15 @@ for df in dfs:
                 KNNBasic_User_model = pickle.load(file)
 
             test_data_path = '../Datasets/experiments/content_rs/combsEmb/' + df + '_' +\
-                             comb + '/data_' + remove + '.test'
+                             comb + '/data/' + df + '_' + str(remove) + '.test'
             test_data = af.pikcle_load(test_data_path)
 
             predictions_RS = KNNBasic_User_model.test(test_data)
 
             # content RS
             filePath_predictions_CRS = '../Datasets/experiments/content_rs/combsEmb/' + \
-                                        df + '_' + comb + '/predictions/predict_' + combination + '.csv'
+                                        df + '_' + comb + '/predictions/predict_' + \
+                                       combination + '_' + str(remove) + '.csv'
             predictions_CRS = pd.read_csv(filePath_predictions_CRS, header=None)
             column_names = ['est']  # замените на нужные названия столбцов
             predictions_CRS.columns = column_names

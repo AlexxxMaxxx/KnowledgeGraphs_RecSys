@@ -5,9 +5,9 @@ import collaborative_rs as clbr_rs
 import pandas as pd
 
 # Тут меняем-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.
-max_size = 100000
+max_size = 250000
 test_size = 0.05
-dataset_name = 'df1'
+dataset_name = 'df2'
 comb = 'comb4'
 RS_type = 'KNNBasic_Item'    # KNNBasic_Item
 repeat = True

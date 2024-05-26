@@ -79,7 +79,7 @@ def start(dataset_name, comb, all_combinations, topN, remove):
             continue
 
 removes = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000]
-dfs = ['df1', 'df2', 'df3', 'df4']
+dfs = ['df3', 'df4']
 comb = 'comb4'
 
 for dataset_name in dfs:
