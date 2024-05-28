@@ -11,6 +11,7 @@ def getTenPerson(data):
             if counter < 10:
                 if person:
                     person_id = ia.search_person(person)
+
                     counter += 1
                     if person_id:
                         writer.writerow([person, person_id[0].personID])

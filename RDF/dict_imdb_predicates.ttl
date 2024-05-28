@@ -50,5 +50,6 @@
 :isDirector  rdf:type rdf:Property .
 :isWriter    rdf:type rdf:Property .
 :isActor     rdf:type rdf:Property .
+:isProducer  rdf:type rdf:Property .
 
 

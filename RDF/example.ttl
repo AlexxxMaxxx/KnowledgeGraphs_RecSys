@@ -11,20 +11,19 @@
 @prefix imdb_person: <https://m.imdb.com/name/> .
 
 
-imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;
-
-                        dc:title    "Toy Story"@en ;
+imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;                                                         #
+                        dc:title    "Toy Story"@en ;                                                        #
                         dc:year     "1995"^^xsd:date ;
                         imdb_preds:rating "8.3"^^xsd:float ;
                         imdb_preds:votes "1060854"^^xsd:integer ;
                         imdb_preds:top250 "77"^^xsd:integer ;
                         imdb_preds:runtimes "81"^^xsd:integer ;
-                        imdb_preds:plot   "A cowboy doll is profoundly threatened and jealous."@en ;
+                        imdb_preds:plot   "A cowboy doll is profoundly threatened and jealous."@en ;        #
 
-                        imdb_preds:wasReleased wd:Q30 ;
+                        imdb_preds:wasReleased wd:Q30 ;                     #
 
-                        imdb_preds:hasGenre wd:Q40831 ;
-                        imdb_preds:hasGenre wd:Q132311 ;
+                        imdb_preds:hasGenre wd:Q40831 ;                     #
+                        imdb_preds:hasGenre wd:Q132311 ;                    #
 
                         imdb_preds:hasDirector imdb_person:nm0005124 ;
 
@@ -33,31 +32,31 @@ imdb_movie:tt00114709   rdfs:subClassOf wd:Q11424 ;
                         imdb_preds:hasActor  imdb_person:nm0000158 ;
                         imdb_preds:hasActor  imdb_person:nm0000741 .
 
-wd:Q11424   dc:title  "Movie"@en ;
-            rdf:type: rdfs:Class .
+wd:Q11424   dc:title  "Movie"@en ;          #
+            rdf:type: rdfs:Class .          #
 
-wd:Q6256    dc:title    "Country"@en ;
-            rdf:type: rdfs:Class .
-wd:Q30     dc:title    "United_States"@en ;
-           rdfs:subClassOf wd:Q6256  .
+wd:Q6256    dc:title    "Country"@en ;      #
+            rdf:type: rdfs:Class .          #
+wd:Q30     dc:title    "United_States"@en ; #
+           rdfs:subClassOf wd:Q6256  .      #
 
-wd:Q28640   dc:title    "Profession"@en ;
-            rdf:type: rdfs:Class .
-wd:Q33999   dc:title    "Actor"@en ;
-              rdfs:subClassOf wd:Q28640 .
-wd:Q36180     dc:title    "Writer"@en ;
-              rdfs:subClassOf wd:Q28640 .
-wd:Q2526255   dc:title    "Director"@en ;
-              rdfs:subClassOf wd:Q28640 .
+wd:Q28640   dc:title    "Profession"@en ;   #
+            rdf:type: rdfs:Class .          #
+wd:Q33999   dc:title    "Actor"@en ;        #
+              rdfs:subClassOf wd:Q28640 .   #
+wd:Q36180     dc:title    "Writer"@en ;     #
+              rdfs:subClassOf wd:Q28640 .   #
+wd:Q2526255   dc:title    "Director"@en ;   #
+              rdfs:subClassOf wd:Q28640 .   #
 
-wd:Q483394  dc:title    "Genre"@en ;
-            rdf:type: rdfs:Class .
+wd:Q483394  dc:title    "Genre"@en ;        #
+            rdf:type: rdfs:Class .          #
 
-wd:Q40831   dc:title    "Comedy"@en ;
-            rdfs:subClassOf wd:Q483394 .
+wd:Q40831   dc:title    "Comedy"@en ;       #
+            rdfs:subClassOf wd:Q483394 .    #
 
-wd:Q132311  dc:title    "Fantasy"@en ;
-            rdfs:subClassOf wd:Q483394 .
+wd:Q132311  dc:title    "Fantasy"@en ;      #
+            rdfs:subClassOf wd:Q483394 .    #
 
 imdb_person:nm0005124   foaf:name   "John Lasseter"@en ;
                         rdf:type wd:Q2526255 ;
